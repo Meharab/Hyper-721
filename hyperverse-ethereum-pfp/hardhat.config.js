@@ -15,23 +15,13 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
- * ${process.env.NEXT_PUBLIC_INFURA_API_KEY}`,
- * process.env.NEXT_PRIVATE_KEY
  */
 module.exports = {
   solidity: "0.8.4",
-  /*settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200
-      }
-    }
-  },
-  defaultNetwork: "rinkeby",*/
    networks: {
      rinkeby: {
-       url: `https://rinkeby.infura.io/v3/abd998c635554f51a7464676979eb3ad`,
-       accounts: ['e80fc63d97a3fc4ce1083867e2e41436db60e5cd87ba12ca4f2b2709b6ec52fe'],
+       url: `https://rinkeby.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_API_KEY}`,
+       accounts: [process.env.NEXT_PRIVATE_KEY],
      },
    },
 };
