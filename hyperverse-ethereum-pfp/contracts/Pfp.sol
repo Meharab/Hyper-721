@@ -1,16 +1,15 @@
-```swift 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 pragma experimental ABIEncoderV2;
 
 import './hyperverse/IHyperverseModule.sol';
-//import "@openzeppelin/contracts/security/Pausable.sol";
+
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-contract Pfp is IHyperverseModule, ERC721Enumerable, Ownable {//, Pausable {
+contract Pfp is IHyperverseModule, ERC721Enumerable, Ownable {
 	address public immutable contractOwner;
 	address private tenantOwner;
 
@@ -54,17 +53,7 @@ contract Pfp is IHyperverseModule, ERC721Enumerable, Ownable {//, Pausable {
     function setBaseURI(string memory _baseTokenURI) public onlyOwner {
         baseTokenURI = _baseTokenURI;
     }
-/**
-    function unlock(address _address) public whenPaused() {
-        require(_address == msg.sender);
-        _unpause();
-    }
 
-    function lock(address _address) public whenNotPaused() {
-        require(_address == msg.sender);
-        _pause();
-    }
- */
     function mintNFTs(uint _count) public payable {
         uint totalMinted = _tokenIds.current();
 
@@ -108,4 +97,3 @@ contract Pfp is IHyperverseModule, ERC721Enumerable, Ownable {//, Pausable {
 		tenantOwner = _tenant;
 	}
 }
-```
