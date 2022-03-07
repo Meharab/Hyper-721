@@ -9,17 +9,10 @@ const CreateInstance = () => {
   const { address } = useEthereum();
   const { NewInstance } = usePfp();
   const { mutate } = NewInstance();
-  const [tokenName, setTokenName] = useState('');
-  const [tokenSymbol, setTokenSymbol] = useState('');
-  const [tokenDecimals, setTokenDecimals] = useState(0);
 
   const createNewInstance = async () => {
     try {
       const instanceData = {
-        account: address,
-        name: tokenName,
-        symbol:tokenSymbol,
-        decimal:tokenDecimals,
       }
 
       mutate(instanceData);
@@ -41,9 +34,7 @@ const CreateInstance = () => {
         </TriggerContainer>
         <Parameters>
         <Content>
-          <Input placeholder='Token Name' onChange={(e) => setTokenName(e.target.value)} />
-          <Input placeholder='Token Symbol' onChange={(e) => setTokenSymbol(e.target.value)} />
-          <Input type="number" min="0" placeholder='Token Decimal' onChange={(e) => setTokenDecimals(e.currentTarget.valueAsNumber)} />
+        
           <Button onClick={createNewInstance}>{!address ? 'Connet Wallet' : 'Create Instance'}</Button>
         </Content>
         </Parameters>
