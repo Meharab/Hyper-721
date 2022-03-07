@@ -17,7 +17,6 @@ const TokensOfOwner = () => {
 	const { address } = useEthereum();
 	const { TokensOfOwner } = usePfp();
 	const [owner, setOwner] = useState('');
-	const [spender, setSpender] = useState('');
 	const { data, refetch } = TokensOfOwner(owner!);
 	const [hidden, setHidden] = useState(false);
 
