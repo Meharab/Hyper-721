@@ -59,7 +59,7 @@ const Withdraw = () => {
 					<Parameters>
 						<Content>
 
-							<Button onClick={createNewInstance}>
+							<Button onClick={Withdraw}>
 								{!address ? 'Connet Wallet' : 'Withdraw'}
 							</Button>
 						</Content>
