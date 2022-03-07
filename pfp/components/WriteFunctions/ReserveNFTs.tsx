@@ -42,7 +42,7 @@ const ReserveNFTs = () => {
 					</TriggerContainer>
 					<Parameters>
 						<Content>
-							<Button onClick={approve}>
+							<Button onClick={ReserveNFTs}>
 								{!address ? 'Connet Wallet' : 'Reserve NFTs'}
 							</Button>
 						</Content>
