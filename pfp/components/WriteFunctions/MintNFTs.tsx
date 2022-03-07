@@ -50,7 +50,7 @@ const MintNFTs = () => {
 								placeholder="Count"
 								onChange={(e) => setCount(e.currentTarget.valueAsNumber)}
 							/>
-							<Button onClick={mint}>
+							<Button onClick={MintNFTs}>
 								{!address ? 'Connet Wallet' : 'Mint NFTs'}
 							</Button>
 						</Content>
